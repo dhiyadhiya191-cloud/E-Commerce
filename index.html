@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Delicious Jewellery Shop</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- PREMIUM SHIMMER EFFECTS -->
+<div class="shimmer-light"></div>
+<div class="gold-dust"></div>
+
+<header>
+  <h2>💍Rubic Jewellery</h2>
+  <button onclick="openLogin()" class="login-btn">Login / Register</button>
+</header>
+
+<!-- LOGIN POPUP -->
+<div id="loginPopup" class="popup">
+  <div class="popup-box">
+    <span class="close-btn" onclick="closePopups()">×</span>
+    <h3>Login</h3>
+    <input id="loginEmail" placeholder="Email">
+    <input id="loginPass" type="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <p>New user? <span onclick="openRegister()" class="link">Register</span></p>
+  </div>
+</div>
+
+<!-- REGISTER POPUP -->
+<div id="registerPopup" class="popup">
+  <div class="popup-box">
+    <span class="close-btn" onclick="closePopups()">×</span>
+    <h3>Register</h3>
+    <input id="regName" placeholder="Name">
+    <input id="regEmail" placeholder="Email">
+    <input id="regPass" type="password" placeholder="Password">
+    <button onclick="register()">Register</button>
+  </div>
+</div>
+
+<!-- SHOP PAGE -->
+<div id="shopPage">
+
+<button id="logoutBtn" class="logout-btn">Logout</button>
+
+<section id="categories">
+  <button class="cat-btn" onclick="loadCategory('gold')">Gold</button>
+  <button class="cat-btn" onclick="loadCategory('silver')">Silver</button>
+  <button class="cat-btn" onclick="loadCategory('diamond')">Diamond</button>
+  <button class="cat-btn" onclick="loadCategory('platinum')">Platinum</button>
+  <button class="cat-btn" onclick="loadCategory('coins')">Coins</button>
+</section>
+
+<section id="filters">
+  <input id="priceFilter" type="number" placeholder="Max Price">
+  <input id="weightFilter" type="number" placeholder="Min Weight (grams)">
+  <button onclick="applyFilters()">Apply Filters</button>
+</section>
+
+<div id="product-container"></div>
+
+<div id="viewer">
+  <h3>360° Product View</h3>
+  <img id="viewerImg">
+  <br><br>
+  <button onclick="closeViewer()">Close</button>
+</div>
+
+<div id="cart">
+  <h3>Your Cart</h3>
+  <div id="cartItems"></div>
+  <h2>Total: ₹<span id="totalPrice">0</span></h2>
+  <button onclick="openPayment()">Proceed to Payment</button>
+</div>
+
+<div id="payment-page">
+  <h3>Payment Details</h3>
+  <input placeholder="Full Name">
+  <input placeholder="Card Number">
+  <input placeholder="Expiry Date (MM/YY)">
+  <input placeholder="CVV">
+  <button onclick="completePayment()" class="pay-btn">Pay Now</button>
+</div>
+
+<footer>© 2025 Jewellery Store | All Rights Reserved</footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
